@@ -157,9 +157,7 @@ mod answers_tests {
 
         pool.close().await;
 
-        let result = answer_doa
-            .delete_answer(Uuid::new_v4())
-            .await;
+        let result = answer_doa.delete_answer(Uuid::new_v4()).await;
 
         if result.is_ok() {
             return Err(format!(
@@ -245,9 +243,7 @@ mod answers_tests {
 
         pool.close().await;
 
-        let result = answer_doa
-            .get_answers(Uuid::new_v4())
-            .await;
+        let result = answer_doa.get_answers(Uuid::new_v4()).await;
 
         if result.is_ok() {
             return Err(format!(
@@ -397,9 +393,7 @@ mod questions_tests {
 
         pool.close().await;
 
-        let result = doa
-            .delete_question(Uuid::new_v4())
-            .await;
+        let result = doa.delete_question(Uuid::new_v4()).await;
 
         if result.is_ok() {
             return Err(format!(

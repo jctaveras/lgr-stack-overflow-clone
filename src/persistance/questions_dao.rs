@@ -49,10 +49,7 @@ impl QuestionDAO for DAO {
 
     async fn delete_question(&self, id: Uuid) -> Result<(), DBError> {
         if id.is_nil() {
-            return Err(DBError::InvalidUUID(format!(
-                "Invalid question id: {}",
-                id
-            )));
+            return Err(DBError::InvalidUUID(format!("Invalid question id: {}", id)));
         }
 
         sqlx::query!("DELETE FROM questions WHERE id = $1", id)
